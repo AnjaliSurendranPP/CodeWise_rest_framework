@@ -21,5 +21,8 @@ from Repository import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('questions/',views.QuestionlistView.as_view()),
-    path('questions/<pk>/',views.QuestionRetrieveUpdateDeleteView.as_view())
+    path('questions/<pk>/',views.QuestionRetrieveUpdateDeleteView.as_view()),
+    path('submissions/',views.SubmissionListCreateView.as_view()),
+    path('submissions/<pk>/',views.SubmissionRetrieveUpdateDeleteView.as_view()),
+ path('submissions/<pk>/evaluation/',views.EvaluatesubmissionView.as_view())
 ]

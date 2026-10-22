@@ -7,22 +7,22 @@ POST http://127.0.0.1:8000/questions/
 Content-Type: application/json
 
 {
-    "title":"python program to find the factorial of a given number",
+    "title":"python program to check if the number is armstrong or not",
     "language":"python",
     "difficulty_level":"easy",
     "notes":"this is sample question based on loop in program",
     "topic":"loops",
-    "sample_input":"5",
-    "sample_output":"120",
+    "sample_input":"153",
+    "sample_output":"153 is an armstrong numberpyht",
     "is_active":"True"
 }
 
 ###
-GET http://127.0.0.1:8000/questions/1/
+GET http://127.0.0.1:8000/questions/11/
 Accept: application/json
 
 ###
-PUT http://127.0.0.1:8000/questions/3/
+PUT http://127.0.0.1:8000/questions/2/
 Content-Type: application/json
 
 {
@@ -34,4 +34,49 @@ Content-Type: application/json
     "sample_input":"5",
     "sample_output":"5 is prime number",
     "is_active":"True"
+}
+
+###
+DELETE http://127.0.0.1:8000/questions/3/
+
+###
+GET http://127.0.0.1:8000/submissions/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/submissions/
+Content-Type: application/json
+
+{
+    "answer":"5 is prime number",
+    "question_id":2,
+    "owner":"anju"
+}
+
+###
+GET http://127.0.0.1:8000/submissions/1/
+Accept: application/json
+
+###
+PUT http://127.0.0.1:8000/submissions/5/
+Content-Type: application/json
+
+
+{
+    "answer":"120",
+    "question_id":4,
+    "owner":"ammu"
+}
+
+###
+DELETE http://127.0.0.1:8000/submissions/5/
+
+
+###
+PUT http://127.0.0.1:8000/submissions/4/evaluation/
+Content-Type: application/json
+
+{
+  "points":5,
+  "remarks":"average coding knowledge"
 }
